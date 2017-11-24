@@ -18,25 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::namespace('Api')->middleware('cors')->group(function () {
+
     Route::apiResource('todos','TodosController');
+
+    Route::apiResource('posts','PostsController');
 });
 
-
-
-//Route::get('todos', function () {
-//    return response()->json([
-//        [
-//            'id'        => 1,
-//            'title'     => 'PHP是世界上最牛b的语言!',
-//            'completed' => false,
-//        ], [
-//            'id'        => 2,
-//            'title'     => 'JavaScript要争霸世界!',
-//            'completed' => false,
-//        ], [
-//            'id'        => 3,
-//            'title'     => 'python才是最牛逼的语言,PHP就是拍黄片!',
-//            'completed' => false,
-//        ],
-//    ]);
-//});

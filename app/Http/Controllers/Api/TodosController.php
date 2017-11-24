@@ -30,7 +30,7 @@ class TodosController extends Controller
     {
         $todo->title = $request->title;
         $todo->body = $request->title;
-        $todo->completed = false;
+        $todo->completed = 0;
         $todo->save();
 
         return $todo;
@@ -55,9 +55,10 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update(Request $request, $id)
     {
-        $todo->completed = ! $request->get('completed');
+        $todo = Todo::find($id);
+        $todo->completed = ! $todo->completed;
         $todo->save();
         return $todo;
     }
@@ -68,8 +69,10 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Todo $todo)
     {
-        //
+        $todo->delete();
+
+        return response()->json(['deleted']);
     }
 }

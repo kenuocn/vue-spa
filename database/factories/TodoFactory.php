@@ -14,7 +14,7 @@ $factory->define(App\Models\Todo::class, function (Faker $faker) {
     return [
         'title' => $sentence,
         'body' => $faker->text(),
-        'completed' => false,
+        'completed' => 0,
         'created_at' => $created_at,
         'updated_at' => $updated_at,
     ];
