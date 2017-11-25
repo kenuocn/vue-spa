@@ -15,6 +15,16 @@ let routes = [
         name: 'posts',
         component : require('./components/posts/Post'),
     },
+    {
+        path:'/register',
+        name:'register',
+        component : require('./components/register/register'),
+    },
+    {
+        path:'/confirm',
+        name:'confirm',
+        component : require('./components/confirm/Email'),
+    }
 ];
 
 /**实例化router组件*/

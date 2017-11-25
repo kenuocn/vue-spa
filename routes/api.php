@@ -24,3 +24,9 @@ Route::namespace('Api')->middleware('cors')->group(function () {
     Route::apiResource('posts','PostsController');
 });
 
+//注册相关
+Route::namespace('Auth')->middleware('cors')->group(function () {
+
+    Route::post('register','RegisterController@register')->name('register');
+});
+

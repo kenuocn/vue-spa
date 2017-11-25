@@ -12,14 +12,14 @@
                 </button>
 
                 <!-- Branding Image -->
-                <router-link class="navbar-brand" to="/">vue-spa</router-link>
+                <router-link class="navbar-brand" to="/">Vue Spa</router-link>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <router-link to="/about" tag="li">
-                        <a href="/about">About</a>
+                    <router-link to="/register" tag="li">
+                        <a>注册</a>
                     </router-link>
                 </ul>
             </div>
